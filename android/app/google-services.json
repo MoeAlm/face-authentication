@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426063886579",
+    "project_id": "face-detection-ea62f",
+    "storage_bucket": "face-detection-ea62f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426063886579:android:d45f1142bf085582ce1f86",
+        "android_client_info": {
+          "package_name": "com.example.face_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtQ5xCe6Qi-_AOu5TE7Vbd5KWmzBrif7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
