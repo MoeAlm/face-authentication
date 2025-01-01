@@ -76,7 +76,7 @@ class _EnterDetailsViewState extends State<EnterDetailsView> {
                         ),
                       );
 
-                      String userId = Uuid().v1();
+                      String userId = const Uuid().v1();
                       UserModel user = UserModel(
                         id: userId,
                         name: _nameController.text.trim().toUpperCase(),

@@ -7,6 +7,7 @@ import 'package:face_auth/constants/theme.dart';
 import 'package:face_auth/register_face/enter_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,9 +23,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      supportedLocales: const [
+        Locale('ar'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       title: 'Face Authentication App',
       theme: ThemeData(
+        fontFamily: 'Tajawal',
         colorScheme: ColorScheme.fromSwatch(accentColor: accentColor),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(color: textColor, fontFamily: 'Tajawal', fontSize: 0.05.sw),
+          foregroundColor: primaryWhite
+        ),
         inputDecorationTheme: InputDecorationTheme(
           contentPadding: const EdgeInsets.all(20),
           filled: true,
@@ -57,52 +71,48 @@ class Home extends StatelessWidget {
     initializeUtilContexts(context);
 
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              scaffoldTopGradientClr,
-              scaffoldBottomGradientClr,
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Opacity(
+            opacity: 0.7,
+            child: Image.asset(
+              'assets/images/face.png',
+              width: 0.7.sw,
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Face Authentication",
-              style: TextStyle(
-                color: textColor,
-                fontSize: 0.033.sh,
-                fontWeight: FontWeight.w600,
-              ),
+          SizedBox(height: 0.025.sh),
+          Text(
+            "تسجيل الدخول بواسطة الوجه",
+            style: TextStyle(
+              color: primaryBlack,
+              fontSize: 0.03.sh,
+              fontWeight: FontWeight.w600,
             ),
-            SizedBox(height: 0.07.sh),
-            CustomButton(
-              text: "Register User",
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => EnterPasswordView(),
-                  ),
-                );
-              },
-            ),
-            SizedBox(height: 0.025.sh),
-            CustomButton(
-              text: "Authenticate User",
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const AuthenticateFaceView(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
+          ),
+          SizedBox(height: 0.07.sh),
+          CustomButton(
+            text: "إنشاء مستخدم",
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => EnterPasswordView(),
+                ),
+              );
+            },
+          ),
+          SizedBox(height: 0.025.sh),
+          CustomButton(
+            text: "تسجيل الدخول",
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const AuthenticateFaceView(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

@@ -80,7 +80,7 @@ class _CameraViewState extends State<CameraView> {
           ),
         ),
         Text(
-          "Click here to Capture",
+          "اضغط هنا لإلتقاط الصورة",
           style: TextStyle(
             fontSize: 14,
             color: primaryWhite.withOpacity(0.6),

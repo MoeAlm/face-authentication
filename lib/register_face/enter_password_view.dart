@@ -20,19 +20,18 @@ class EnterPasswordView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Enter Password"),
+        title: Text(
+          "كلمة المرور",
+          style: Theme.of(context).appBarTheme.titleTextStyle!.copyWith(
+                color: Colors.black54,
+              ),
+        ),
+        foregroundColor: primaryColor,
         elevation: 0,
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              scaffoldTopGradientClr,
-              scaffoldBottomGradientClr,
-            ],
-          ),
+          color: primaryWhite,
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -43,11 +42,11 @@ class EnterPasswordView extends StatelessWidget {
                 CustomTextField(
                   formFieldKey: _formFieldKey,
                   controller: _controller,
-                  hintText: "Password",
-                  validatorText: "Enter password to proceed",
+                  hintText: "كلمة المرور",
+                  validatorText: "ادخل كلمة المرور لإكمال عملية التسجيل",
                 ),
                 CustomButton(
-                  text: "Continue",
+                  text: "الاستمرار",
                   onTap: () async {
                     if (_formFieldKey.currentState!.validate()) {
                       FocusScope.of(context).unfocus();

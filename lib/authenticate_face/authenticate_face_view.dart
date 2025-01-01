@@ -69,7 +69,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBarColor,
-        title: const Text("Authenticate Face"),
+        title: const Text("تسجيل المستخدم"),
         elevation: 0,
       ),
       body: LayoutBuilder(
@@ -79,14 +79,7 @@ class _AuthenticateFaceViewState extends State<AuthenticateFaceView> {
               width: constrains.maxWidth,
               height: constrains.maxHeight,
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    scaffoldTopGradientClr,
-                    scaffoldBottomGradientClr,
-                  ],
-                ),
+              color: primaryColor
               ),
             ),
             Align(

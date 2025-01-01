@@ -31,6 +31,8 @@ class CustomTextField extends StatelessWidget {
           ),
           decoration: InputDecoration(
             hintText: hintText,
+            filled: true,
+            fillColor: Colors.grey.shade200
           ),
           validator: (val) {
             if (val == null || val.trim().isEmpty) {

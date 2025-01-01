@@ -45,14 +45,8 @@ class _RegisterFaceViewState extends State<RegisterFaceView> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              scaffoldTopGradientClr,
-              scaffoldBottomGradientClr,
-            ],
-          ),
+            color: primaryColor
+
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
